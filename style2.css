@@ -1,0 +1,355 @@
+body{
+    margin: 0;
+    background-image: radial-gradient(
+        circle at 10% 107%, #000000 10%, #0e0e0e 0%, #201d21 25%,
+        #2d292d 60%, #393741 90%);
+
+    position: relative;
+    
+}
+header{
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem 2rem;
+    transition: transform 0.3s;
+
+}
+header:hover{
+    transform: translateX(20px);
+}
+article.post{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1); 
+    margin-right:2rem;
+    margin-left: 2rem;
+    backface-visibility: visible;
+    border-style: none; 
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+    width:100%;   
+    margin: 1rem;
+    text-align: justify;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    padding: .5rem;
+}
+article.post:hover{
+    box-shadow: 0 0.2rem 2rem rgba(218, 5, 5, 0.3) 
+}
+.post h2{
+    color: white;
+    padding: 0rem 0rem 1rem 1rem;
+    background-color:rgb(97, 171, 236);
+}
+.contenedor{
+    display: flex;
+    width:100%;  
+}
+.img1{
+    width: 90%;
+    margin: 1rem;
+    height: 250px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+.img1:hover{
+    transform: scale(1.2);
+  }
+
+  /* Parrafos  */ /* Parrafos  */ /* Parrafos  */
+p.parrafo{ 
+    padding-left: 2rem;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    width: 95%;
+} 
+
+/* subtitulos */ /* subtitulos */ /* subtitulos */
+.subtitulo{
+    color: white;
+    padding-top: 2rem;
+    padding-left: 1rem;
+}
+.subtitulo:hover{
+    text-decoration: underline;
+    text-decoration-color: gold;
+    
+}
+/* Tabla */ /* Tabla */ /* Tabla */
+
+/* Estilo para toda la tabla */
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 20px auto; 
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo para el encabezado de la tabla */
+  th.a {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  /* Estilo para las celdas de la tabla */
+  td {
+    border: 1px solid #181515;
+    padding: 8px;
+    text-align: center;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  /* Estilo para la fila de encabezado */
+  thead tr {
+    border-bottom: 2px solid #408bd6;
+    
+  }
+  
+  /* Estilo para las filas impares de la tabla */
+  tbody tr:nth-child(odd) {
+    background-color: #2a2727;
+  }
+  
+  /* Estilo para las filas pares de la tabla */
+  tbody tr:nth-child(even) {
+    background-color: #171414;
+  }
+  
+  /* Estilo para la celda de la imagen */
+  td.zoom {
+    max-width: 150px;
+    text-align: center;
+  }
+  
+  /* Estilo para la celda con fondo dorado */
+   td.gold { 
+    color: gold;
+  }
+  
+  /* Estilo para las etiquetas <span> con clase "sub" */
+  span.sub {
+    font-size: 90%;
+    color:cornflowerblue;
+  }
+  
+  /* Estilo para las imágenes */
+  img {
+    /* max-width: 100%; */
+    height:auto;
+    width: 12rem;
+  }
+  
+  /* Estilo para la leyenda de la tabla (caption) */
+  caption {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #ffffff;
+    background-color: cornflowerblue;
+  }
+  
+  /* Estilo para el bloque de estilo */
+  td.zoom img {
+    cursor: pointer;
+    transition: transform 0.5s;
+    border: 3px solid #d41f1f;
+    box-shadow: 3px 3px 5px #ee4e4e;
+  }
+  
+  /* Efecto de zoom en las imágenes al pasar el ratón */
+  td.zoom img:hover {
+    transform: scale(1.9);
+  } 
+  /* Imagenes Ilustrativas */  /* Imagenes Ilustrativas */
+
+  .ilustración{
+    width: 70%; 
+    height: auto;
+    padding-left: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+ /*menu */ /*menu */ /*menu */ /*menu */
+
+.container{
+    width: 100%;
+    max-width: 700px;
+    margin:2rem;
+    margin-top: 2rem;
+    color: white;
+}
+.lbl-menu{
+    background: rgb(12, 48, 68);
+}
+.lbl-menu label{
+    display: inline-block;
+    padding: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+.lbl-menu label:hover{
+    background: #1c3b57;
+    
+}
+.content{
+    position: relative;
+}
+.content div{
+    position: absolute;
+    line-height: 1.8;
+    transition: all 600ms ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.90);
+    padding: 20px;
+    background: #1c3b57;
+    padding-bottom: 40px;
+    font-size: 1.2rem;
+    width: 94.3%;
+}
+#radio1,#radio2{
+    display: none;
+}
+
+#radio1:checked ~ .tab1,
+#radio2:checked ~ .tab2{
+   opacity: 1;
+   visibility: visible;
+   transform: scale(1);
+}
+
+.content div:after{
+    position: absolute;
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid #ffffff;
+    bottom: 100%;
+    left: 28px;
+}
+.content .tab2:after{
+    left: 115px;
+}
+
+/* Listas */ /* Listas */ /* Listas */ /* Listas */
+.listas{
+    margin-left: 2rem;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    width: 90%;
+}
+ul>li{
+  padding: 1rem;
+  /* list-style-type: square; */
+}
+
+ol>li{
+  padding: 1rem;
+}
+
+/* tabs css */ /* tabs css */ /* tabs css */
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #ffffff;
+}
+
+.tabs1 {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  border-radius: 5px 5px 0 0;
+}
+
+.tabs1:hover {
+  background-color: #2f2b2b;
+}
+
+/* Contenedor para la información */
+.tab-content {
+  padding: 15px;
+  border: 1px solid #ffffff;
+  border-radius: 0 0 5px 5px;
+  cursor: pointer;
+}
+.tab-content:hover{
+  background-color: #2f2b2b;
+}
+
+
+/* Estilos para el botón y el menú desplegable */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Estilos para los enlaces en el menú desplegable */
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-content a:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Mostrar el menú desplegable cuando se pasa el ratón por encima del botón */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* footer /* footer /* footer
+.menu {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .menu ul li {
+    display: inline;
+  }
+  
+  .menu ul li a {
+    display: inline-block; /* Cambio a display inline-block
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .menu ul li a:hover {
+    background-color: #555;
+  } */
+  

@@ -1,11 +1,432 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		...
-	</head>
-	<body>
-		<p>This is body the page!</p>
-        <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1600" width="50%">
-	</body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Introducción a CSS</title>
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+
+  <header>
+    <h1>CSS</h1>
+      <!-- <div>
+        <img class="head" src="Imagenes/header.jpg" alt="Imagen">
+     </div>  -->
+     <hr>
+  </header>
+
+  <h1>Introducción a CSS y Selectores básicos</h1>
+  <section class="contenedor">
+
+    <article class="post">
+      <h2>¿Que es CSS?</h2>
+      <p>
+        <b>CSS es un lenguaje de diseño gráfico que permite definir y crear la presentación de un documento
+          estructurado escrito en un lenguaje de marcado. Es muy usado para establecer el diseño visual de los
+          documentos web e interfaces de usuario escritas en HTML.
+        </b>
+      </p>
+        <img class="img1" src="Imagenes/CSS3.png">
+    </article>
+
+    <article class="post">
+      <h2>¿Que significa CSS?</h2>
+      <p><b>Las siglas CSS (Cascading Style Sheets) significan «Hojas de estilo en cascada» y parten de un concepto simple pero muy potente: aplicar estilos (colores, formas, márgenes, etc...) a uno o varios documentos (generalmente documentos HTML, páginas webs) de forma automática y masiva.</b></p>
+      <img class="img1" src="Imagenes/significadocss.jpg">
+
+    </article>
+
+    <article class="post">
+      <h2>¿Por qué se usa CSS?</h2>
+      <p><b>La idea de CSS es la de utilizar el concepto de separación de presentación y contenido. Este concepto se basa en que, como programadores, lo ideal es separar claramente el código que escribimos. ¿Por qué? Porque con el tiempo, esto hará que el código sea más fácil de modificar y mantener.</b></p>
+      <img class="img1" src="Imagenes/que-es-css.png">
+    </article>
+ </section>
+
+<h1 class="subtitulo">Cómo usar CSS</h1>
+
+
+<table>
+  <caption>
+    Formas de enlazar css
+  </caption>
+  <thead>
+    <tr>
+       <th class="a">Nombre</th>
+       <th class="a">Mediante</th>
+       <th class="a">Descripción</th>
+       <th class="a">Ejemplo</th>
+    </tr>
+  </thead>
+ <tbody>
+  <tr>
+    <td class="gold">Archivo CSS externo</td>
+    <td>Etiqueta <span class="sub">&lt;link rel="stylesheet"&gt;</span></td>
+    <td>El codigo se escribe en un archivo <span class="sub">.css</span> aparte.<br>Recomendado.</td>
+    <td class="zoom"><img src="Imagenes/externo.png" alt="Imagen 1"></td>
+  </tr>
+  <tr>
+    <td class="gold">Bloque de estilo</td>
+    <td>Etiqueta <span class="sub">&lt;"style"&gt;</span> </td>
+    <td>El codigo se escribe en una etiqueta  <span class="sub">&lt;"style"&gt;</span> en el <br>documento HTML</td>
+    <td class="zoom"><img src="Imagenes/bloque.png" alt="Imagen 1"></td>
+  </tr>
+  <tr>
+    <td class="gold">Estilos en línea</td>
+    <td>Atributo HTML <span class="sub"> style="..."&gt;</span></td>
+    <td>El codigo se escribe en un atributo <span class="sub">&lt;"style"&gt;</span> en <br>una etiqueta</td>
+    <td class="zoom"><img src="Imagenes/en-linea.png" alt="Imagen 1"></td>
+  </tr>
+ </tbody>
+</table>
+
+<h1 class="subtitulo">Estructura de CSS</h1>
+  
+  <P class="parrafo">Los documentos CSS son archivos de texto (igual que los documentos HTML), sólo que en este caso tienen extensión .css en lugar de .html. 
+      En el código de un documento .css se escriben una serie de órdenes y el cliente (navegador) las interpreta y aplica a los documentos HTML.</P>
+
+<h1 class="subtitulo">Relación de el HTML con CSS</h1>
+
+  <p class="parrafo">En primer lugar, recuerda que debemos tener el documento .css enlazado desde nuestro documento .html, preferiblemente desde una etiqueta 
+      &lt;link rel="stylesheet"&gt;. <br>
+      En su atributo href colocaremos el nombre del documento .css que contiene los estilos:</p>
+
+   <img class="ilustración" src="Imagenes/externo.png" alt="Imagen1"><br>
+
+  <p class="parrafo">Bien, ya tenemos nuestro archivo .html conectado con nuestro archivo .css. Ahora todo el código CSS que coloquemos en nuestro index.css 
+    se aplicará al HTML y se verá reflejado en el navegador.</p>
+
+<h1 class="subtitulo">Sintaxis CSS</h1>
+  
+  <p class="parrafo">Vamos a centrarnos ahora en el contenido de nuestro documento index.css. 
+    El código CSS de dicho documento, se basa en una serie de conceptos que debemos tener claros antes de continuar. Demos un repaso a cada uno de ellos:</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th class="a">Concepto</th>
+      <th class="a">Descripción</th>
+   </tr>
+  </thead>
+<tbody>
+    <tr>
+      <td class="gold"> Selector</td>
+      <td> Elemento o elementos del documento que vamos a seleccionar para aplicarle un estilo concreto.</td>
+    </tr>
+    <tr>
+      <td class="gold"> Propiedad</td>
+      <td>Característica principal que vamos a definir con el valor indicado a continuación. </td>
+    </tr>
+    <tr>
+      <td class="gold"> Valor </td>
+      <td> Cada propiedad tiene una serie de valores concretos asignables, con los que tendrá uno u otro comportamiento.</td>
+    </tr>
+    <tr>
+      <td class="gold"> Comentario </td>
+      <td>Fragmento de texto entre /* y */ con anotaciones o aclaraciones para el desarrollador (el navegador los ignorará). </td>
+    </tr>
+    <tr>
+      <td class="gold"> Regla </td>
+      <td> Par de propiedad y su respectivo valor asociado.</td>
+    </tr>
+</tbody>
+</table><br>
+
+<p class="parrafo">Así pues, tras aprender estos conceptos, la estructura de un documento .css 
+    se basaría en organizar el código siguiendo el formato del siguiente bloque:</p>
+
+     <img class="ilustración" src="Imagenes/sintaxis.jpeg" alt="Imagen1">
+
+<p class="parrafo">Ahora vamos con un ejemplo</p>
+
+
+<div class="container">
+  <div class="lbl-menu">
+      <label for="radio1">HTML</label>
+      <label for="radio2">CSS</label>
+  </div>
+
+  <div class="content">
+           
+    <input type="radio" name="radio" id="radio1" checked>
+    <div class="tab1">
+        <h2>HTML</h2>
+        &lt;<aspan style="color:red;">div</aspan> <aspan style="color:rgb(199, 67, 244);">class</aspan>
+        ="<span style="color: rgb(85, 248, 70);"> page </span>"&gt;<br> &nbsp;&nbsp;
+        &lt;<span style="color: rgb(238, 255, 0);"> h1 </span>&gt; Titulo de la pagina &lt;<span style="color: rgb(238, 255, 0);"> /h1 </span>&gt;<br>&nbsp;&nbsp;
+        &lt; <span style="color: rgb(102, 248, 231);"> p </span> &gt; Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima expedita voluptate voluptatem hic corrupti nam optio rem quia. Odit, tempora fuga! Natus odio incidunt similique et blanditiis vel, amet perspiciatis. &lt;<span style="color: rgb(102, 248, 231);"> /p </span>&gt;<br>
+        &lt;<span style="color: red;"> /div </span>&gt;
+    </div>
+    
+    <input type="radio" name="radio" id="radio2">
+    <div class="tab2">
+        <h2>CSS</h2>
+        <p><span style="color: chocolate;"> p</span> { <br> color: red;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/*Color de texto*/ <br>}</p>
+    </div>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<h1 class="subtitulo">Documento CSS</h1>
+
+  <p class="parrafo">Los documentos CSS se forman por cientos de reglas de este estilo, con diferentes selectores, propiedades y valores. 
+    Habitualmente, cada bloque declarado suele incluir múltiples reglas. </p>
+
+    <img class="ilustración" src="Imagenes/documento-css.png" alt="Imagen1"><br>
+
+  <p class="parrafo">Debemos tener en cuenta que, a medida que escribimos código CSS, este se va haciendo más grande y más difícil de controlar y mantener. 
+    Para intentar evitar perder el control del mismo, hay que seguir una serie de buenas prácticas al escribir código, 
+    que aunque no son necesarias para que funcione en el navegador, los desarrolladores consideramos obligatorias para que sea más fácil de leer:</p><br>
+  
+
+<div class="listas">
+<ul>
+      <li>Escribe una regla por línea. Será mucho más fácil de leer y modificar.</li><br>
+      <li>Usa la indentación. Tras escribir el carácter { al empezar un bloque de reglas, las propiedades se separan hacia la derecha. Esto hace que sea más fácil de leer
+         y se considera una buena práctica de desarrollo y de programación en general.</li><br>
+      <li>El último punto y coma de un bloque de reglas es opcional. Sin embargo, se suele aconsejar escribirlo para mantener una coherencia y 
+        evitar problemas o descuidos al modificar posteriormente el código.</li>
+    </ul>    
+</div><br>
+
+
+<p class="parrafo">Estos consejos mejoran sustancialmente la legibilidad del código. Se consideran prácticas de cumplimiento obligatorio para ayudar a entender
+   más rápidamente el código ajeno (o incluso el nuestro) sin necesidad de invertir mucho tiempo.</p>
+  
+
+
+ <h1 class="subtitulo">Selectores</h1>
+
+  <p class="parrafo">Los selectores en CSS son patrones que se utilizan para seleccionar y aplicar estilos a elementos HTML específicos en una página web. Los selectores permiten a los diseñadores y 
+    desarrolladores web definir reglas de estilo que se aplicarán a elementos específicos en función de su estructura, atributos o clases. A continuación, 
+    se presentan algunos de los selectores más comunes en CSS:</p>
+  
+
+<div class="listas">
+  <ol>
+    <li>Selector de tipo (Element Selector):<br> Se utiliza para seleccionar todos los elementos 
+      de un tipo específico en una página. Por ejemplo, para seleccionar todos los párrafos en un documento, puedes usar p como selector.</li>
+      <div class="tabs">
+        <div class="tabs1">CSS</div>
+      </div>
+<div class="tab-content">
+        <!-- Aquí puedes poner información con CSS -->
+        <p>p {<br>
+          color: blue; &nbsp;&nbsp;&nbsp;&nbsp; /* Cambia el color de los parrafos a azul */<br>
+        }</p>
+    </div>
+      
+    <li>Selector de clase (Class Selector):<br> Permite seleccionar elementos que tienen un atributo class específico. Se denota con un punto antes del nombre de la clase.</li>
+      <div class="tabs">
+        <div class="tabs1">CSS</div>
+      </div>
+<div class="tab-content">
+      <!-- Aquí puedes poner información con CSS -->
+      <p>.destacado {<br>
+        font-weight: bold; &nbsp;&nbsp;&nbsp;&nbsp;/* Hace que el texto de estos elementos esté en negrita */<br>
+      }</p>
+  </div>
+    <li>Selector de ID (ID Selector):<br> Se utiliza para seleccionar un elemento específico con un atributo id. Se denota con un signo de almohadilla (#) seguido del nombre del ID.</li>
+      <div class="tabs">
+        <div class="tabs1">CSS</div>
+      </div>
+<div class="tab-content">
+  <!-- Aquí puedes poner información con CSS -->
+  <p>#encabezado {<br>
+    background-color: #ccc; &nbsp;&nbsp;&nbsp;&nbsp; /*Establece un fondo gris claro a este elemento */<br>
+  }</p>
+</div>
+    <li>Selector de descendencia (Descendant Selector):<br> Permite seleccionar elementos que son descendientes de otros elementos. Se utilizan espacios para separar los selectores.</li>
+      <div class="tabs">
+        <div class="tabs1">CSS</div>
+      </div>
+<div class="tab-content">
+<!-- Aquí puedes poner información con CSS -->
+<p>div p {<br>
+  font-style: italic;&nbsp;&nbsp;&nbsp;&nbsp; /* Cambia el estilo del texto a cursiva en los parrafos dentro de "div" */<br>
+}</p>
+</div>
+    <li>Selector de hijo directo (Child Selector):<br> Similar al selector de descendencia, pero selecciona solo los elementos que son hijos directos de otro elemento. Se utiliza el signo mayor que (>) para separar los selectores.</li>
+      <div class="tabs">
+        <div class="tabs1">CSS</div>
+      </div>
+<div class="tab-content">
+<!-- Aquí puedes poner información con CSS -->
+<p>ul > li {<br>
+  list-style-type: square; &nbsp;&nbsp;&nbsp;&nbsp; /* Cambia el estilo de la lista a viñetas cuadradas  */<br>
+}</p>
+</div>
+    <li>Selector de atributo (Attribute Selector):<br> Se utiliza para seleccionar elementos basados en sus atributos. Puedes seleccionar elementos con un atributo específico y, en algunos casos, con un valor específico del atributo.</li>
+      <div class="tabs">
+        <div class="tabs1">CSS</div>
+      </div>
+<div class="tab-content">
+<!-- Aquí puedes poner información con CSS -->
+<p>input [type="text"] {<br>
+  border: 1px solid #ccc;   &nbsp;&nbsp;&nbsp;&nbsp; /* Agrega un borde gris alrededor de los elementos de entrada de tipo 'text' */<br>
+}</p>
+</div>
+    <li>Selector universal (Universal Selector):<br> Selecciona todos los elementos en la página y se denota con un asterisco (*).</li>
+      <div class="tabs">
+        <div class="tabs1">CSS</div>
+      </div>
+<div class="tab-content">
+<!-- Aquí puedes poner información con CSS -->
+<p>* {<br>
+   margin: 0;  &nbsp;&nbsp;&nbsp;&nbsp; /* Elimina el margen de todos los elementos */<br>
+   padding: 0;  &nbsp;&nbsp;&nbsp;&nbsp; /* Elimina el relleno de todos los elementos */<br>
+}</p>
+</div>
+</ol>
+</div> 
+
+<h1 class="subtitulo">Propiedades</h1>
+
+<p class="parrafo">Las propiedades CSS (Cascading Style Sheets) son instrucciones que se utilizan para controlar la presentación y el diseño de elementos HTML en una página web. 
+  Estas propiedades permiten definir características como el color, el tamaño, la posición, el espaciado y muchas otras características visuales de los elementos HTML. Ejemplos</p>
+
+<div class="listas">
+ <ol>
+  <li>Propiedad Color:<br> Define el color de el texto</li>
+   <div class="tabs">
+     <div class="tabs1">CSS</div>
+   </div>
+<div class="tab-content">
+<!-- Aquí puedes poner información con CSS -->
+<p>p {<br>
+  color: red;
+<br>
+}</p>
+</div>
+
+<li>Propiedad "font-size":<br> Establece el tamaño de la fuente</li>
+  <div class="tabs">
+   <div class="tabs1">CSS</div>
+  </div>
+<div class="tab-content">
+<!-- Aquí puedes poner información con CSS -->
+<p>h1 {<br>
+font-size: 24px;
+<br>
+}</p>
+</div>
+
+<li>Propiedad background-color:<br> Define el color de fondo de un elemento</li>
+  <div class="tabs">
+    <div class="tabs1">CSS</div>
+  </div>
+<div class="tab-content">
+<!-- Aquí puedes poner información con CSS -->
+<p>div {<br>
+background-color: red;
+<br>
+}</p>
+</div>
+
+<li>Propiedad margin:<br> Controla el espacio externo alrededor de un elemento</li>
+  <div class="tabs">
+    <div class="tabs1">CSS</div>
+  </div>
+<div class="tab-content">
+<!-- Aquí puedes poner información con CSS -->
+<p>img {<br>
+margin: 10px;
+<br>
+}</p>
+</div>  
+
+<li>Propiedad padding:<br> Controla el espacio interno dentro de un elemento</li>
+  <div class="tabs">
+   <div class="tabs1">CSS</div>
+  </div>
+<div class="tab-content">
+<!-- Aquí puedes poner información con CSS -->
+<p>div {<br>
+padding: 15px;
+<br>
+}</p>
+</div>  
+
+<li>Propiedad border:<br>Define un borde alrededor de un elemento</li>
+  <div class="tabs">
+   <div class="tabs1">CSS</div>
+  </div>
+<div class="tab-content">
+<!-- Aquí puedes poner información con CSS -->
+<p>button {<br>
+border: 1px solid &nbsp; #ffffff;
+<br>
+}</p>
+</div> 
+
+<li>Propiedad text-aling:<br>Alinea el texto de un elemento</li>
+  <div class="tabs">
+   <div class="tabs1">CSS</div>
+  </div>
+<div class="tab-content">
+<!-- Aquí puedes poner información con CSS -->
+<p>p {<br>
+text-aling: center;
+<br>
+}</p>
+</div> 
+
+<li>Propiedades width y height:<br> Controlan el ancho y la altura de un elemento</li>
+  <div class="tabs">
+   <div class="tabs1">CSS</div>
+  </div>
+<div class="tab-content">
+<!-- Aquí puedes poner información con CSS -->
+<p>img {<br>
+width: 200px;<br>
+heigth: 150px;
+<br>
+}</p>
+</div> 
+
+<li>Propiedad font-family:<br>Establece la fuente de texto utilizada. </li>
+  <div class="tabs">
+   <div class="tabs1">CSS</div>
+  </div>
+<div class="tab-content">
+<!-- Aquí puedes poner información con CSS -->
+<p>body {<br>
+font-family: Arial, sans-serif;
+<br>
+}</p>
+</div> 
+
+<li>Propiedad display:<br> Contorla el tipo de 
+  visulaización de un elemento, como bloque o en linea</li>
+  <div class="tabs">
+   <div class="tabs1">CSS</div>
+  </div>
+ <div class="tab-content">
+ <!-- Aquí puedes poner información con CSS -->
+ <p>span {<br>
+ display: inline;
+ <br>
+ }</p>
+ </div> 
+ </ol>
+
+</div>
+
+
+   <!-- <footer> 
+   <div class="menu">
+  <ul>
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#">Acerca de</a></li>
+    <li><a href="#">Servicios</a></li>
+    <li><a href="#">Contacto</a></li>
+  </ul>
+</div>
+</footer> -->
+</body>
+
 </html>
